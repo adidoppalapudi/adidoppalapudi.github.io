@@ -1,82 +1,72 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Aditya's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-		
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body>
+<html lang="en">
+<head>
+    <title>Aditya's Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
 
-		<!-- Wrapper -->
-			<div>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-				<!-- Main -->
-					<section>
+        <!-- Main Content -->
+        <main>
+            <section class="intro">
+                <h1>Hey! This is <i>Aditya Doppalapudi</i>. <i>Welcome to my portfolio page :)</i></h1>
+                <div class="profile">
+                    <a href="sun_and_me.jpeg">
+                        <img src="sun_and_me.jpeg" alt="Profile-Pic" loading="lazy" class="profile-pic">
+                    </a>
+                </div>
+            </section>
 
-						<!-- Items -->
-							<div>
+            <!-- About Section -->
+            <section>
+                <h2>About Me</h2>
+                <p>
+                    I am a Master’s student in CS at Old Dominion University (ODU), Norfolk.<br>
+                    I am learning Data Science and Machine Learning.<br>
+                    I am passionate about Python programming, databases, and quantum computing. I also enjoy working on real-world data analytics problems.<br>
+                    Currently, I am working on a data science project for CS620, applying analytical techniques to raw datasets.<br>
+                    Outside of academics, I am always eager to explore new technologies and enhance my problem-solving skills.
+                </p>
+            </section>
 
-								<div>
-									<h1><i>Hey! This is</i> Aditya Doppalapudi. <i>Welcome to my porfolio page :)</i></h1>
-									<a href="sun_and_me.jpeg" class="image"><img src="sun_and_me.jpeg" alt="profile_pic" style="width: 240px; height: auto;"></a>
-								</div>
+            <!-- Resume Section -->
+            <section>
+                <h2>Resume</h2>
+                <a href="resume_dec.pdf" target="_blank" rel="noopener noreferrer">📄 View My Resume 📄</a>
+            </section>
+        </main>
 
-								<article>
-									<h2>About me</h2>
-									<p>
-										I am a Master’s student in CS at Old Dominion University (ODU), Norfolk. <br>
-										I am learning Data Science and Machine Learning. <br>
-										I am Passionate about Python programming, databases, and quantum computing and I also enjoy working on real-world data analytics problems. <br>
-										Currently, I am working on a data science project for CS620, focusing on applying various analytical techniques to raw datasets. <br>
-										Outside of academics, I am always eager to explore new technologies and enhance my problem-solving skills.
-									</p>
-								</article>
-								<article>
-									<h2>
-										Resume
-									</h2>
-									<a href="resume_dec.pdf" target="_blank">📄 View My Resume 📄</a>
+        <!-- Footer -->
+        <footer>
+            <section>
+                <p>Socials for contacting me:</p>
+                <ul class="icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/aditya-doppalapudi-240125288/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/adidoppalapudi" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:aditya.doppalapudi@gmail.com">
+                            <i class="fa-solid fa-envelope"></i> Email
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </footer>
 
-								</article>
-							</div>
-					</section>
-<!-- Footer -->
-<footer>
-    <section>
-		<p>Socials for contacting me:</p>
-        <ul class="icons">
-            <li>
-                <a href="https://www.linkedin.com/in/aditya-doppalapudi-240125288/" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/adidoppalapudi" target="_blank">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
-            </li>
-            <li>
-                <a href="mailto:aditya.doppalapudi@gmail.com">
-                    <i class="fa-solid fa-envelope"></i> Email
-                </a>
-            </li>
-        </ul>
-    </section>
-</footer>
+    </div>
 
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>

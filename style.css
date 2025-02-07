@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.profile {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically (if needed) */
+    margin-top: 10px;
+}
+
+.profile-pic {
+    width: 250px; /* Ensure the correct size */
+    height: auto;
+    border-radius: 20%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+ul.icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+ul.icons li {
+    display: inline;
+}
+
+ul.icons a {
+    text-decoration: none;
+    color: #0077b5;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+ul.icons a:hover {
+    color: #005582;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #222;
+    color: white;
+}
