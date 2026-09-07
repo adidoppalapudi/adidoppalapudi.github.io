@@ -1,99 +1,129 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
 <head>
-    <title>Aditya's Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aditya Doppalapudi's portfolio of projects in AI, data science, software security, and quantum computing.">
+  <title>Aditya Doppalapudi | Projects</title>
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "warm";
+      document.documentElement.dataset.theme = savedTheme || defaultTheme;
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page" id="top">
+    <header class="site-header">
+      <a class="brand" href="#top">Aditya Doppalapudi</a>
+      <div class="header-actions">
+        <a href="Resume_Aditya_Sept.pdf" target="_blank" rel="noopener">Resume</a>
+        <button class="theme-toggle" type="button" aria-label="Switch color theme">
+          <span aria-hidden="true">◐</span>
+          <span class="theme-name">Dark</span>
+        </button>
+      </div>
+    </header>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Projects</p>
+          <h1>Backend, data, and AI projects.</h1>
+          <p class="lede">I am Aditya Doppalapudi. My work includes data analysis, generative AI security, and quantum computing research.</p>
+          <div class="links">
+            <a href="https://github.com/adidoppalapudi" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/aditya-doppalapudi-240125288/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:aditya.doppalapudi@gmail.com">Email</a>
+          </div>
+        </div>
+        <dl class="facts">
+          <div><dt>Focus</dt><dd>AI, data, and security</dd></div>
+          <div><dt>Education</dt><dd>M.S. Computer Science, ODU</dd></div>
+          <div><dt>Location</dt><dd>Dallas, Texas</dd></div>
+        </dl>
+      </section>
 
-        <!-- Main Content -->
-        <main>
-            <section class="intro">
-                <h1>Hey! This is <i>Aditya Doppalapudi</i>. <i>Welcome to my portfolio page :)</i></h1>
-                <div class="profile">
-                    <a href="sun_and_me.jpeg">
-                        <img src="sun_and_me.jpeg" alt="Profile-Pic" loading="lazy" class="profile-pic">
-                    </a>
-                </div>
-            </section>
+      <section class="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected projects</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <p class="project-type">Team project</p>
+            <h3>Proactive vulnerability prevention</h3>
+            <p>Worked on a secure code generation pipeline that adds CWE-specific vulnerability hints before generation. The project used Llama models, CodeQL static analysis, and an automated repair step for generated Python code.</p>
+            <ul class="tags" aria-label="Technologies used">
+              <li>Python</li><li>Llama</li><li>CodeQL</li><li>Vertex AI</li>
+            </ul>
+          </article>
 
-            <!-- About Section -->
-            <section class="about-me">
-				<h2>About Me</h2>
-					<div class="about-text">
-						<p>🎓 I am a Master’s student in <em>CS at Old Dominion University (ODU), Norfolk</em>.</p>
-						<p>🤖 Passionate about <em>Data Science, Machine Learning, Python, Databases, and Quantum Computing</em>.</p>
-						<p>📊 Currently working on a <em>Data Science Project for CS620</em>, focusing on real-world analytics.</p>
-						<p>🎥 A lover of films, ✒ a collector of fountain pens, and 🎨 an explorer of unique inks—because creativity isn't just for code.</p>
+          <article class="project-card">
+            <p class="project-type">Solo project</p>
+            <h3>Environmental restoration analysis</h3>
+            <p>Cleaned and mapped 7,224 U.S. Fish and Wildlife Service restoration records to study project distribution, acres restored, management types, and changes over time.</p>
+            <ul class="tags" aria-label="Technologies used">
+              <li>Python</li><li>Pandas</li><li>GeoPandas</li><li>Folium</li>
+            </ul>
+          </article>
 
-					</div>
-			</section>
+          <article class="project-card">
+            <p class="project-type">Research presentation</p>
+            <h3>Quantum sensitivity analysis for complex contagion</h3>
+            <p>Explored how quantum amplitude estimation and QAOA could reduce the cost of sensitivity analysis and seed-node selection in complex contagion models.</p>
+            <ul class="tags" aria-label="Topics covered">
+              <li>Quantum computing</li><li>QAE</li><li>QAOA</li><li>Complex networks</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-			<section class="courses">
-				<h2 class="heading-3">📚 Courses I'm Currently Enrolled In</h2>
-				<div class="course-list">
-					<div class="course">
-						<h3><i class="fa-solid fa-code"></i> CS500 - Foundations of Computing</h3>
-						<p>Exploring fundamental computing principles, algorithms, and problem-solving techniques.</p>
-					</div>
-					<div class="course">
-						<h3><i class="fa-solid fa-chart-line"></i> CS620 - Intro to Data Science & Analytics</h3>
-						<p>Learning data analytics techniques, data visualization, and implementing machine learning models.</p>
-					</div>
-					<div class="course">
-						<h3><i class="fa-solid fa-atom"></i> CS795 - Utilization and Scalable Quantum Computing</h3>
-						<p>Studying quantum computing principles, scalability challenges, and practical applications.</p>
-					</div>
-				</div>
-			</section>
-			
+      <section class="coursework" aria-labelledby="coursework-heading">
+        <h2 id="coursework-heading">Graduate coursework</h2>
+        <ul>
+          <li>CS 500 Foundations of Computing</li>
+          <li>CS 550 Database Concepts</li>
+          <li>CS 555 Networks and Communication</li>
+          <li>CS 571 Operating Systems</li>
+          <li>CS 620 Data Science and Analytics</li>
+          <li>CS 624 Data Analytics and Big Data</li>
+          <li>CS 650 Advanced Databases</li>
+          <li>CS 665 Computer Architecture</li>
+          <li>CS 690 Colloquium</li>
+          <li>CS 795 Generative AI</li>
+          <li>CS 795 Utility-Scale Quantum Computing</li>
+        </ul>
+      </section>
+    </main>
 
-            <!-- Resume Section -->
-            <section class="resume">
-				<h2 class="heading-3">
-					<a href="resume_dec.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">
-						<i class="fa-solid fa-file"></i> My Resume
-					</a>
-					
-				</h2>
-			</section>
-			
-			
-			
-			
-        </main>
+    <footer class="site-footer">
+      <span>© 2026 Aditya Doppalapudi</span>
+      <div>
+        <a href="mailto:aditya.doppalapudi@gmail.com">Email</a>
+        <a href="https://github.com/adidoppalapudi" target="_blank" rel="noopener">GitHub</a>
+        <a href="Resume_Aditya_Sept.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </footer>
+  </div>
 
-        <!-- Footer -->
-        <footer>
-            <section>
-                <p>My Socials:</p>
-                <ul class="icons">
-                    <li>
-                        <a href="https://www.linkedin.com/in/aditya-doppalapudi-240125288/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/adidoppalapudi" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:aditya.doppalapudi@gmail.com">
-                            <i class="fa-solid fa-envelope"></i> Email
-                        </a>
-                    </li>
-                </ul>
-            </section>
-        </footer>
+  <script>
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const themeName = document.querySelector(".theme-name");
 
-    </div>
+    function updateThemeToggle() {
+      const darkThemeIsActive = root.dataset.theme === "dark";
+      themeName.textContent = darkThemeIsActive ? "Warm" : "Dark";
+      toggle.setAttribute("aria-label", `Switch to ${darkThemeIsActive ? "warm" : "dark"} theme`);
+    }
 
+    toggle.addEventListener("click", () => {
+      root.dataset.theme = root.dataset.theme === "dark" ? "warm" : "dark";
+      localStorage.setItem("portfolio-theme", root.dataset.theme);
+      updateThemeToggle();
+    });
+
+    updateThemeToggle();
+  </script>
 </body>
 </html>
