@@ -188,7 +188,8 @@ h1 span {
 }
 
 .projects,
-.coursework {
+.coursework,
+.contact {
   border-top: 1px solid var(--border);
   padding: 25px 0 0;
 }
@@ -269,15 +270,13 @@ h2 {
 }
 
 .contact {
-  margin-top: 40px;
-  padding-top: 28px;
-  border-top: 1px solid var(--border);
+  margin-top: 28px;
 }
 
 .contact p {
   margin: 0;
-  color: var(--prose);
-  font: 16px/1.6 var(--sans);
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .coursework {
@@ -352,6 +351,83 @@ h2 {
 
   .site-footer div {
     margin-top: 14px;
+  }
+}
+
+/* Bird: sits on the page's horizontal lines and can be dragged. */
+.page {
+  position: relative;
+}
+
+.bird {
+  position: absolute;
+  z-index: 3;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  transform-origin: 50% 100%;
+}
+
+.bird.dragging {
+  cursor: grabbing;
+}
+
+.bird canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  animation: bob 2.6s ease-in-out infinite;
+}
+
+.bird.dragging canvas,
+.bird.falling canvas {
+  animation: flap 0.18s steps(2) infinite;
+}
+
+.bird.landed {
+  animation: land 0.22s ease-out;
+}
+
+.bird-note {
+  position: absolute;
+  left: 70%;
+  top: -14px;
+  color: var(--accent);
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bird-note.show {
+  animation: note 1.1s ease-out;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes flap {
+  0% { transform: translateY(-3px) rotate(-4deg); }
+  100% { transform: translateY(1px) rotate(3deg); }
+}
+
+@keyframes land {
+  0% { transform: scale(1.12, 0.82); }
+  100% { transform: scale(1, 1); }
+}
+
+@keyframes note {
+  0% { opacity: 0; transform: translate(0, 4px); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: translate(10px, -14px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bird canvas,
+  .bird.landed {
+    animation: none !important;
   }
 }
 
