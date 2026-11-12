@@ -21,7 +21,7 @@
       <div class="header-actions">
         <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
         <button class="theme-toggle" type="button">
-          <span data-theme-option="warm">Warm</span>
+          <span data-theme-option="warm">Light</span>
           <span data-theme-option="dark">Dark</span>
         </button>
       </div>
@@ -187,7 +187,8 @@
     function updateThemeToggle() {
       const current = root.dataset.theme === "dark" ? "dark" : "warm";
       const next = current === "dark" ? "warm" : "dark";
-      toggle.setAttribute("aria-label", `Color theme: ${current}. Switch to ${next}.`);
+      const name = (theme) => (theme === "dark" ? "dark" : "light");
+      toggle.setAttribute("aria-label", `Color theme: ${name(current)}. Switch to ${name(next)}.`);
     }
 
     toggle.addEventListener("click", () => {
