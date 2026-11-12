@@ -91,7 +91,7 @@
     document.getElementById("movie-day-count").textContent = movieDays.size;
     document.querySelectorAll("[data-months]").forEach(drawMonths);
     drawCalendar("movie-log", movieDays, data.through, "Film watched", moviesByDay, showMovieDate);
-    drawCalendar("calligraphy-log", calligraphyDays, data.calligraphy.through, "Practice uploaded (sample)");
+    drawCalendar("calligraphy-log", calligraphyDays, data.calligraphy.through || new Date().toISOString().slice(0, 10), "Practice logged");
   }
 
   render().catch(error => console.error("Unable to render activity logs.", error));

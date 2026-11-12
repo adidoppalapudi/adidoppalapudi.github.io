@@ -83,7 +83,7 @@
     .palette-swatch { width:9px; height:9px; border-radius:50%; background:var(--swatch); box-shadow:0 0 0 1px color-mix(in srgb,var(--text) 18%, transparent); }
     .palette-choice[data-dark-palette-choice] { display:inline-flex; }
 
-    .nameplate { position:relative; display:grid; grid-template-columns:minmax(0,1.35fr) minmax(250px,.75fr); gap:34px; align-items:center; margin:30px 0 0; padding:23px 26px 24px; border:2px solid var(--text); background:var(--surface); box-shadow:6px 6px 0 var(--text); }
+    .nameplate { position:relative; display:grid; grid-template-columns:minmax(0,1fr); gap:34px; align-items:center; margin:30px 0 0; padding:23px 26px 24px; border:2px solid var(--text); background:var(--surface); box-shadow:6px 6px 0 var(--text); }
     .nameplate > div,.quick-facts { min-width:0; }
     .hello { display:inline-block; margin:0 0 10px; padding:4px 9px; background:var(--accent); color:#fff8ed; font-size:11px; letter-spacing:.1em; text-transform:uppercase; }
     .nameplate h1 { margin:0; font:750 clamp(2.8rem,6.6vw,5.1rem)/.94 var(--sans); letter-spacing:-.065em; }
@@ -101,7 +101,7 @@
     .site-index .index-label { color:var(--accent); }
 
     .site-map { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:22px 0 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .site-map a { display:grid; grid-template-columns:25px 1fr; gap:8px; min-height:64px; align-content:center; padding:10px 13px 10px 0; color:var(--text); text-decoration:none; }
+    .site-map a { display:grid; grid-template-columns:minmax(0,1fr); gap:8px; min-height:64px; align-content:center; padding:10px 13px 10px 0; color:var(--text); text-decoration:none; }
     .site-map a + a { padding-left:15px; border-left:1px solid var(--border); }
     .site-map a:hover .map-title { color:var(--accent); }
     .map-number { color:var(--accent); font:10px var(--mono); }
@@ -110,7 +110,7 @@
 
     .about-grid { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr); gap:54px; padding:26px 0 22px; }
     .section-label { margin:0 0 12px; color:var(--accent); font-size:11px; letter-spacing:.1em; text-transform:uppercase; }
-    .bio p { max-width:64ch; margin:0 0 13px; color:var(--prose); font:15px/1.65 var(--sans); }
+    .bio p:not(.section-label) { max-width:64ch; margin:0 0 13px; color:var(--prose); font:15px/1.65 var(--sans); }
     .bio p:last-of-type { margin-bottom:0; }
     .study-list { margin-top:5px; border-top:1px dotted var(--border); }
     .study-entry { display:grid; grid-template-columns:70px minmax(0,1fr); gap:12px; padding:10px 0; border-bottom:1px dotted var(--border); }
@@ -132,7 +132,7 @@
 
     .daily-logs { padding:27px 0 16px; }
     .logs-heading { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:18px; }
-    .logs-heading h2 { margin:0; font:600 20px/1.25 var(--sans); letter-spacing:-.03em; }
+    .logs-heading h2 { margin:0; color:var(--accent); font:400 11px/1.6 var(--mono); letter-spacing:.1em; text-transform:uppercase; }
     .logs-heading p { margin:0; color:var(--muted); font-size:11px; }
     .logs-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px; }
     .daily-log { min-width:0; padding-top:13px; border-top:2px solid var(--text); }
@@ -211,32 +211,26 @@
           <h1 id="page-title">Aditya<br>Doppalapudi</h1>
           <p class="role">Digital Engineer at OSI Digital <span aria-hidden="true">/</span> Dallas, Texas</p>
         </div>
-        <ul class="quick-facts" aria-label="A few current details">
-          <li><b>Studied</b><span>M.S. Computer Science, ODU, 2026</span></li>
-        </ul>
       </section>
 
       <nav class="site-map" aria-label="Explore the site">
-        <a href="work/"><span class="map-number">01</span><span><span class="map-title">Selected work</span><span class="map-note">Six projects</span></span></a>
-        <a href="#daily-logs"><span class="map-number">02</span><span><span class="map-title">Daily logs</span><span class="map-note">Films &amp; calligraphy</span></span></a>
-        <a href="https://adidoppalapudi.github.io/enyalie/"><span class="map-number">03</span><span><span class="map-title">Enyalië</span><span class="map-note">Elvish flashcards</span></span></a>
-        <a href="https://nibs-and-wings.duckdns.org/" target="_blank" rel="noopener"><span class="map-number">04</span><span><span class="map-title">Nib &amp; Wings</span><span class="map-note">Calligraphy archive ↗</span></span></a>
+        <a href="work/"><span><span class="map-title">Selected work</span><span class="map-note">Personal projects</span></span></a>
+        <a href="#daily-logs"><span><span class="map-title">Daily logs</span><span class="map-note">Films &amp; calligraphy</span></span></a>
+        <a href="https://adidoppalapudi.github.io/enyalie/"><span><span class="map-title">Enyalië</span><span class="map-note">Quizzes &amp; flashcards</span></span></a>
+        <a href="https://nibs-and-wings.duckdns.org/" target="_blank" rel="noopener"><span><span class="map-title">Nib &amp; Wings</span><span class="map-note">Personal calligraphy</span></span></a>
       </nav>
 
       <section class="about-grid" aria-label="About Aditya">
         <div class="bio">
           <p class="section-label">Work &amp; study</p>
           <p>As a Digital Engineer at OSI Digital, I work on AI-powered procurement products. My role spans backend engineering and applied AI, shaping conversational tools for purchasing workflows and evaluating whether their answers hold up.</p>
-          <div class="study-list" aria-label="Education">
-            <div class="study-entry"><time datetime="2026-05">May 2026</time><p>M.S. in Computer Science at Old Dominion University, where I focused on applied AI and software security.</p></div>
-            <div class="study-entry"><time datetime="2024-07">July 2024</time><p>B.Tech. in Electronics and Communication Engineering at JNTUH.</p></div>
-          </div>
+          <p>I completed an M.S. in Computer Science at Old Dominion University in May 2026 and a B.Tech. in Electronics and Communication Engineering at JNTUH in July 2024.</p>
         </div>
         <div class="personal">
           <p class="section-label">Hobbies</p>
           <ul class="hobbies">
-            <li><b>Films</b><span>104 movies watched so far in 2026.</span></li>
-            <li><b>Calligraphy</b><span>Practice images uploaded in <a href="https://nibs-and-wings.duckdns.org/" target="_blank" rel="noopener">Nib &amp; Wings</a>.</span></li>
+            <li><b>Films</b><span>Watching movies is a way for me to relax.</span></li>
+            <li><b>Calligraphy</b><span>Calligraphy is a passion of mine.</span></li>
             <li><b>Table tennis</b><span>Played on my high school and college teams.</span></li>
           </ul>
           <div class="links"><a href="mailto:aditya.doppalapudi@gmail.com">Email</a><a href="https://github.com/adidoppalapudi" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/adityadoppalapudi/" target="_blank" rel="noopener">LinkedIn</a></div>
@@ -244,14 +238,14 @@
       </section>
 
       <section class="skills" aria-label="Skills">
-        <h2><span>Tools</span><span>&amp;</span><span>topics</span></h2>
+        <h2><span>Tools</span><span>&amp;</span><span>skills</span></h2>
         <div class="skill-group"><h3>Languages</h3><p>Python · SQL · TypeScript · JavaScript · C · MATLAB</p></div>
         <div class="skill-group"><h3>Build with</h3><p>FastAPI · React · Next.js · Node.js · PostgreSQL · Docker</p></div>
         <div class="skill-group"><h3>AI &amp; cloud</h3><p>LLM evaluation · RAG · GraphRAG · Bedrock · Vertex AI · CodeQL</p></div>
       </section>
 
       <section class="daily-logs" id="daily-logs" aria-labelledby="logs-heading">
-        <div class="logs-heading"><h2 id="logs-heading">off-duty</h2><p>2026 · Each square is one day</p></div>
+        <div class="logs-heading"><h2 id="logs-heading">2026, day by day</h2></div>
         <div class="logs-columns">
           <section class="daily-log" aria-labelledby="movie-log-heading">
             <div class="log-heading"><h3 id="movie-log-heading">Movies</h3><span>104 entries · <span id="movie-day-count">76</span> days</span></div>
@@ -261,9 +255,9 @@
           </section>
           <section class="daily-log" aria-labelledby="calligraphy-log-heading">
             <div class="log-heading"><h3 id="calligraphy-log-heading">Calligraphy</h3><span>Nib &amp; Wings</span></div>
-            <div class="log-scroll"><div class="log-months" data-months aria-hidden="true"></div><div class="log-grid" id="calligraphy-log" role="group" aria-label="Calligraphy upload dates in 2026; sample dates"></div></div>
-            <p class="log-caption"><span><i></i>Uploaded practice</span><span><i class="empty"></i>No upload</span></p>
-            <p class="log-note">Sample dates · upload sync pending</p>
+            <div class="log-scroll"><div class="log-months" data-months aria-hidden="true"></div><div class="log-grid" id="calligraphy-log" role="group" aria-label="Calligraphy practice dates in 2026"></div></div>
+            <p class="log-caption"><span><i></i>Practice logged</span><span><i class="empty"></i>No entry</span></p>
+            <p class="log-note">No entries yet</p>
           </section>
         </div>
       </section>
