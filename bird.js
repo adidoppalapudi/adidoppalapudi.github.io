@@ -93,6 +93,7 @@
 
   // ---------- position, in page coordinates ----------
   let x = 0, y = 0; // top-left of the bird
+  let headerPerched = false;
   const place = () => {
     bird.style.left = `${x}px`;
     bird.style.top = `${y}px`;
@@ -161,12 +162,37 @@
     requestAnimationFrame(step);
   }
 
-  // Start perched on the facts box.
+  // Start on the header rule so palette controls appearing or disappearing
+  // below the header cannot leave the bird hanging in the old layout.
   function perchStart() {
     const origin = page.getBoundingClientRect();
-    const box = document.querySelector(".facts").getBoundingClientRect();
+    const spot = page.querySelector(".site-header[data-perch]") || page.querySelector("[data-perch]") || page.querySelector(".facts") || page.querySelector(".site-header");
+    if (spot.matches(".site-header")) {
+      const brand = spot.querySelector(".brand");
+      const actions = spot.querySelector(".header-actions");
+      const brandRight = brand ? brand.getBoundingClientRect().right - origin.left : 0;
+      const actionsLeft = actions ? actions.getBoundingClientRect().left - origin.left : spot.clientWidth;
+      const gapLeft = brandRight + 12;
+      const gapRight = actionsLeft - 12;
+      const hasRoom = gapRight - gapLeft >= W;
+      const needsMobileRoom = matchMedia("(max-width: 760px)").matches && !hasRoom;
+      spot.classList.toggle("bird-perch-room", needsMobileRoom);
+
+      const headerBox = spot.getBoundingClientRect();
+      if (hasRoom) {
+        x = gapLeft + (gapRight - gapLeft - W) / 2;
+      } else {
+        x = Math.max(0, Math.min(page.clientWidth - W, headerBox.right - origin.left - W - 8));
+      }
+      y = headerBox.bottom - origin.top - H;
+      headerPerched = true;
+      place();
+      return;
+    }
+    const box = spot.getBoundingClientRect();
     x = Math.max(0, box.right - origin.left - W - 18);
     y = box.top - origin.top - H;
+    headerPerched = false;
     place();
   }
   perchStart();
@@ -175,6 +201,7 @@
   let drag = null;
   bird.addEventListener("pointerdown", (e) => {
     falling = false;
+    headerPerched = false;
     bird.classList.remove("falling");
     bird.setPointerCapture(e.pointerId);
     drag = { dx: e.clientX - x, dy: e.clientY - y, sx: e.clientX, sy: e.clientY, moved: false };
@@ -249,8 +276,11 @@
   addEventListener("resize", () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      x = Math.min(x, page.clientWidth - W);
-      fall();
+      if (headerPerched) perchStart();
+      else {
+        x = Math.min(x, page.clientWidth - W);
+        fall();
+      }
     }, 150);
   });
 })();

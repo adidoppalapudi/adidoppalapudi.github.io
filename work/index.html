@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aditya Doppalapudi, full-stack engineer. Projects in web applications, AI security, data, and quantum computing.">
+  <title>Aditya Doppalapudi | Projects</title>
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        const savedPalette = localStorage.getItem("portfolio-dark-palette") || localStorage.getItem("portfolio-palette-preview");
+        document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+        document.documentElement.dataset.palette = savedTheme === "dark" ? (["amber", "night"].includes(savedPalette) ? savedPalette : "amber") : "ink-moss";
+      } catch {
+        document.documentElement.dataset.theme = "light";
+        document.documentElement.dataset.palette = "ink-moss";
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="page" id="top">
+    <header class="site-header" data-perch>
+      <a class="brand" href="#top">Aditya Doppalapudi</a>
+      <div class="header-actions">
+        <a href="../index.html">About</a>
+        <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <button class="theme-toggle" type="button">
+          <span data-theme-option="light">Light</span>
+          <span data-theme-option="dark">Dark</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="palette-picker" role="group" aria-label="Dark color tone">
+      <button class="palette-choice" type="button" data-dark-palette-choice="amber" aria-label="Warmer dark palette: Amber and Ink" aria-pressed="false"><i class="palette-swatch" style="--swatch:#ffbd45"></i>Warmer</button>
+      <button class="palette-choice" type="button" data-dark-palette-choice="night" aria-label="Cooler dark palette: Night Teal" aria-pressed="false"><i class="palette-swatch" style="--swatch:#31d8c2"></i>Cooler</button>
+    </div>
+
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Projects</p>
+          <h1>Full-Stack Engineer <span>AI Applications</span></h1>
+          <p class="lede">I am Aditya Doppalapudi. I build full-stack applications and work on generative AI security, data analysis, and quantum computing research.</p>
+          <div class="links">
+            <a href="https://github.com/adidoppalapudi" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/adityadoppalapudi/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:aditya.doppalapudi@gmail.com">Email</a>
+          </div>
+        </div>
+        <dl class="facts">
+          <div><dt>Focus</dt><dd>AI, data, and security</dd></div>
+          <div><dt>Education</dt><dd>M.S. Computer Science, ODU</dd></div>
+          <div><dt>Location</dt><dd>Dallas, Texas</dd></div>
+        </dl>
+      </section>
+
+      <section class="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected projects</h2>
+        <div class="project-list">
+          <article class="project">
+            <span class="project-num" aria-hidden="true">01</span>
+            <div class="project-body">
+              <h3>Enyalië</h3>
+              <p class="project-result">4,648 questions in 38 starter decks</p>
+              <p>Local-first flashcard and quiz app. Decks are stored in the browser with IndexedDB, work offline as an installable PWA, and move between devices as JSON files. No account or server.</p>
+              <ul class="tags" aria-label="Technologies used">
+                <li>TypeScript</li><li>React</li><li>Vite</li><li>IndexedDB</li><li>PWA</li>
+              </ul>
+            </div>
+            <div class="project-meta">
+              <span>Solo project</span>
+              <span class="project-links">
+                <a href="https://adidoppalapudi.github.io/enyalie/" target="_blank" rel="noopener">Live</a>
+                <a href="https://github.com/adidoppalapudi/enyalie" target="_blank" rel="noopener">Code</a>
+              </span>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="project-num" aria-hidden="true">02</span>
+            <div class="project-body">
+              <h3>Proactive vulnerability prevention</h3>
+              <p class="project-result">About 65% lower vulnerability rate across 1,071 code samples</p>
+              <p>Worked on a secure code generation pipeline that adds CWE-specific vulnerability hints before generation. The project used Llama models, CodeQL static analysis, and an automated repair step for generated Python code.</p>
+              <ul class="tags" aria-label="Technologies used">
+                <li>Generative AI</li><li>Python</li><li>Llama</li><li>CodeQL</li><li>Vertex AI</li>
+              </ul>
+            </div>
+            <div class="project-meta">
+              <span>Team project</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="project-num" aria-hidden="true">03</span>
+            <div class="project-body">
+              <h3>A Movie a Night</h3>
+              <p class="project-result">14% lower rating error than a popularity baseline, on 25 million ratings</p>
+              <p>Movie discovery app built on MovieLens 25M. Loads 25 million ratings into PostgreSQL, compares recommenders on a 5-million-rating held-out split, and serves search, recommendations, and analytics through FastAPI.</p>
+              <ul class="tags" aria-label="Technologies used">
+                <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>scikit-learn</li><li>Docker</li>
+              </ul>
+            </div>
+            <div class="project-meta">
+              <span>Solo project</span>
+              <a href="https://github.com/adidoppalapudi/a-movie-a-night" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="project-num" aria-hidden="true">04</span>
+            <div class="project-body">
+              <h3>Nib &amp; Wings</h3>
+              <p class="project-result">Whole backend in under 300 lines, with no database</p>
+              <p>Calligraphy practice log with public galleries and a single admin account. An Express backend with flat JSON storage, session login, and image uploads, deployed behind nginx on an Oracle Cloud VM.</p>
+              <ul class="tags" aria-label="Technologies used">
+                <li>Node.js</li><li>Express</li><li>JavaScript</li><li>nginx</li>
+              </ul>
+            </div>
+            <div class="project-meta">
+              <span>Solo project</span>
+              <a href="https://nibs-and-wings.duckdns.org/" target="_blank" rel="noopener">Live</a>
+              <a href="https://github.com/adidoppalapudi/nibs-and-wings" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="project-num" aria-hidden="true">05</span>
+            <div class="project-body">
+              <h3>Quantum sensitivity analysis for complex contagion</h3>
+              <p>Explored how quantum amplitude estimation and QAOA could reduce the cost of sensitivity analysis and seed-node selection in complex contagion models.</p>
+              <ul class="tags" aria-label="Topics covered">
+                <li>Quantum computing</li><li>QAE</li><li>QAOA</li><li>Complex networks</li>
+              </ul>
+            </div>
+            <div class="project-meta">
+              <span>Research presentation</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="project-num" aria-hidden="true">06</span>
+            <div class="project-body">
+              <h3>Environmental restoration analysis</h3>
+              <p class="project-result">7,224 clean records kept from 9,210 raw rows</p>
+              <p>Cleaned and mapped U.S. Fish and Wildlife Service restoration records to study project distribution, acres restored, management types, and changes over time.</p>
+              <ul class="tags" aria-label="Technologies used">
+                <li>Python</li><li>Pandas</li><li>GeoPandas</li><li>Folium</li>
+              </ul>
+            </div>
+            <div class="project-meta">
+              <span>Solo project</span>
+              <a href="https://github.com/adidoppalapudi/CS620_Restoration_Projects" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="coursework" aria-labelledby="coursework-heading">
+        <h2 id="coursework-heading">Graduate coursework</h2>
+        <ul>
+          <li><b>CS 500</b> Foundations of Computing</li>
+          <li><b>CS 550</b> Database Concepts</li>
+          <li><b>CS 555</b> Networks and Communication</li>
+          <li><b>CS 571</b> Operating Systems</li>
+          <li><b>CS 620</b> Data Science and Analytics</li>
+          <li><b>CS 624</b> Data Analytics and Big Data</li>
+          <li><b>CS 650</b> Advanced Databases</li>
+          <li><b>CS 665</b> Computer Architecture</li>
+          <li><b>CS 690</b> Colloquium</li>
+          <li><b>CS 795</b> Generative AI</li>
+          <li><b>CS 795</b> Utility-Scale Quantum Computing</li>
+        </ul>
+      </section>
+
+      <section class="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p>Want to talk about a role or a project? <a href="mailto:aditya.doppalapudi@gmail.com">aditya.doppalapudi@gmail.com</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Aditya Doppalapudi</span>
+      <div>
+        <a href="../index.html">About</a>
+        <a href="mailto:aditya.doppalapudi@gmail.com">Email</a>
+        <a href="https://github.com/adidoppalapudi" target="_blank" rel="noopener">GitHub</a>
+        <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const paletteChoices = [...document.querySelectorAll("[data-dark-palette-choice]")];
+
+    function savedDarkPalette() {
+      try {
+        const saved = localStorage.getItem("portfolio-dark-palette") || localStorage.getItem("portfolio-palette-preview");
+        return ["amber", "night"].includes(saved) ? saved : "amber";
+      } catch {
+        return "amber";
+      }
+    }
+
+    function updatePaletteChoices() {
+      paletteChoices.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.darkPaletteChoice === root.dataset.palette)));
+    }
+
+    function updateThemeToggle() {
+      const current = root.dataset.theme === "dark" ? "dark" : "light";
+      const next = current === "dark" ? "light" : "dark";
+      toggle.setAttribute("aria-label", `Color theme: ${current}. Switch to ${next}.`);
+    }
+
+    toggle.addEventListener("click", () => {
+      if (root.dataset.theme === "dark") {
+        root.dataset.theme = "light";
+        root.dataset.palette = "ink-moss";
+      } else {
+        root.dataset.theme = "dark";
+        root.dataset.palette = savedDarkPalette();
+      }
+      try { localStorage.setItem("portfolio-theme", root.dataset.theme); } catch {}
+      updateThemeToggle();
+      updatePaletteChoices();
+    });
+
+    paletteChoices.forEach(button => button.addEventListener("click", () => {
+      root.dataset.palette = button.dataset.darkPaletteChoice;
+      try { localStorage.setItem("portfolio-dark-palette", root.dataset.palette); } catch {}
+      updatePaletteChoices();
+    }));
+
+    updatePaletteChoices();
+    updateThemeToggle();
+  </script>
+  <script src="../bird.js" defer></script>
+</body>
+</html>
