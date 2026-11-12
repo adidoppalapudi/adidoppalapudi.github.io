@@ -1,4 +1,5 @@
 (() => {
+  const logDataUrl = new URL("../data/activity-logs.json", document.currentScript.src);
   const DAY = 86400000;
   const year = 2026;
   const start = Date.UTC(year, 0, 1);
@@ -72,7 +73,7 @@
   }
 
   async function render() {
-    const response = await fetch(`activity-logs.json?t=${Date.now()}`, { cache: "no-store" });
+    const response = await fetch(`${logDataUrl.href}?t=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) throw new Error("Unable to load log data.");
     const data = await response.json();
     const movieDays = new Set(data.letterboxd.days);
